@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"/>
+
+
+
+  <title>Leaflet Draw plugin</title>
+</head>
+<body>
+  <div>
+  <input type="text" id="adress" value="" style= "float:left">
+  <button onclick="InputLocation()" style ="float:left">Adresse auf Karte anzeigen</button>
+  <button onclick="getLocation_geojson()" style= "float:left">Aktuellen Standort ermitteln </button>
+  <button onclick="displayFromMongo(map, true)" style ="float:left">Standorte aus MongoDB anzeigen und editieren </button>
+</div>
+  <p>&nbsp;</p>
+  <a href="localhost:3000/public/indexpublic.html" title="Get some foo!" id="foo" style= "float: left" target="_blank" rel="noopener noreferrer">Standorte an Mongo DB übergeben und zur Bushaltestellenanzeige wechseln</a>
+  <p>&nbsp;</p>
+  <div id="main" style="overflow: auto;">
+    <div id="map" style="width: 600px; height: 400px; float: left;"></div>
+    <div id="data">
+        <textarea id="geojsontextarea" style="width: 300px; height: 400px; float: left;"></textarea><br />
+    </div>
+    <!--<button onclick ="inputToMongo()" style="float:left">An MongoDB senden</button>-->
+    
+  </div>
+
+ 
+ 
+
+  <br />
+  
+
+</body>
+</html>
+
+
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+<script src="script_geoJson.js"></script>
+<script src="script.js"></script>
+
+<script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script src="tokens.js"></script>
+

@@ -1,0 +1,53 @@
+/* styles assigned to html elements */
+
+p {
+    font-family: arial, sans-serif;
+}
+
+div {
+ font-family: arial, sans-serif;
+}
+
+strong {
+    font-family: arial, sans-serif;
+}
+
+br {
+    font-family: arial, sans-serif;
+}
+
+a {
+  font-family: arial, sans-serif;
+}
+
+  /* styles assigned to the table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  height: 160px;
+  float: right;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 120px
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#map { height: 520px;
+      width: 520px;
+      float: left;
+     }
+
+     #map2 { height: 520px;
+      width: 520px;
+      float: left;
+     }
+
+
