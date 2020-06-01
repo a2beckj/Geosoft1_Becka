@@ -148,7 +148,10 @@ fetch(url)
 })
 }
 
-
+/**
+*@desc This function determines the next lines departuring from the clostest busstops
+*@param {array} busstops - The closest 5 busstops to users position
+*/
 function lines(busstops){
   // for every busstop do the following
   for (i=0; i<busstops.length; i++){
@@ -181,6 +184,10 @@ function lines(busstops){
   }
 }
 
+/**
+*@desc This function creates the table with closest busstops and further information
+*@param {array} busstop - The busstop that that table row is created from
+*/
 
 function table(busstop){
   var table = document.getElementById("myTable"); // connect to table in html
