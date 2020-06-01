@@ -66,7 +66,9 @@ function showPosition(position) {
 
 
 /**
- * @description This function gets the busstops of Münster by attaching to the API.
+ * @description This function gets the busstops of Münster by attaching to the API and calculates the closest 5 bussops 
+ * to a specific position
+ * @param {array} pnt - the position that the calcualtions are based on
  */
 function busstops(pnt){
 
