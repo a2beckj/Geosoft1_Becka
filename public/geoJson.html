@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="/leaflet/leaflet.css">
+  <link rel="stylesheet" type="text/css" href="/leaflet-draw/leaflet.draw-src.css">
+  <link rel="stylesheet" href="public/style.css">
+    
+  <title>Leaflet Draw plugin</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="adress" value="" style= "float:left">
+    <button onclick="InputLocation()" style ="float:left">Adresse auf Karte anzeigen</button>
+    <button onclick="getLocation_geojson()" style= "float:left">Aktuellen Standort ermitteln </button>
+    <button onclick="displayFromMongo(map, true)" style ="float:left">Standorte aus MongoDB anzeigen und editieren </button>
+    <!-- <<button onclick="displayFromMongo(map, true)" style ="float:left">Standorte aktualisieren </button> -->
+  </div>
+
+  <p>&nbsp;</p>
+
+  <a href="localhost:3000/pag2" title="Get some foo!" id="foo" style= "float: left" target="_blank" rel="noopener noreferrer">Neuen Standort an Mongo DB übergeben und zur Bushaltestellenanzeige wechseln</a>
+  
+  <p>&nbsp;</p>
+  <div id="main" style="overflow: auto;">
+    <div id="map" style="width: 600px; height: 400px; float: left;"></div>
+    <div id="data">
+        <textarea id="geojsontextarea" style="width: 300px; height: 400px; float: left;"></textarea><br />
+        <input type="text" id="delete" value="Hier Marker ID eingeben" style= "float:left"> 
+         <button onclick="deleteItem()" style ="float:left"> Marker anhand ID löschen</button>
+    </div>
+       
+  </div>
+  <br />
+  </body>
+</html>
+
+<script src= "/leaflet/leaflet.js"></script> 
+<script src= "/leaflet-draw/leaflet.draw-src.js"></script>
+<script src="/jquery/jquery.js"></script>
+
+<script src="public/script_geoJson.js"></script>
+<script src="public/script.js"></script>
+<script src="public/tokens.js"></script>
+
+
+
