@@ -1,7 +1,7 @@
 # Geosoft1_Aufgabe5_Becka
 
 Hallo, meine Abgabe ist nicht perfekt.
-Funktionieren tut sie aber, bis auf ein paar Editierfunktionen, trotzdem. 
+Funktionieren tut sie aber trotzdem. 
 Server wurde genauso erstellt wie bei Nick im Live-Coding präsentiert, mit 'item' als collection und 'itemdb' als Datenbank. 
 Der Server läuft auf Localhost Port 3000.
 Starten des Servers mit 'npm start'.
