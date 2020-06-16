@@ -221,6 +221,11 @@ function showPosition_geojson(position) {
     document.getElementById("geojsontextarea").value = JSON.stringify(marker.toGeoJSON());
 })}
 
+/**
+* @desc This function displays data from MongoDB on Leaflet Map
+* @param {id} mapid The map that the data should be displayed on
+* @param {boolean} dragging define wheather dragging markers is enabled or not
+*/
 function displayFromMongoMap(mapid, dragging){
   //connect to data in MongoDB
   $.ajax({  url: "//localhost:3000/item",       
