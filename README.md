@@ -1,4 +1,4 @@
-# Geosoft1_Aufgabe5_Becka
+# Geosoft1_Aufgabe6_Becka
 
 Hallo, meine Abgabe ist nicht perfekt.
 Funktionieren tut sie aber trotzdem. 
