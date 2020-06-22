@@ -265,8 +265,10 @@ function displayFromMongoMap(mapid, dragging){
                           // add marker to map
                           mapid.addLayer(marker);
                           marker.bindPopup(id1);
-                           
-                          // create marker event that marker can be dragged
+
+
+                          // create marker event thar marker can be dragged
+
                           marker.on('drag', function(ev){
                             document.getElementById("geojsontextarea").value = JSON.stringify(marker.toGeoJSON());
                             
@@ -316,4 +318,6 @@ function updateToMongo(marker){
                    console.log("Feature aktualisiert");
           }
         })
+
   } 
+
