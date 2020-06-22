@@ -3,7 +3,7 @@
 // jshint esversion: 6
 
 /**
-* Lösung zu Aufgabe 5, Geosoft 1, SoSe 2020
+* Lösung zu Aufgabe 6, Geosoft 1, SoSe 2020
 * @author Judith Becka   Matr.Nr.: 426693
 */
 
@@ -16,6 +16,32 @@ var osmLayer =new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
 
 // add OSM-Layer to map
 osmLayer.addTo(map2);
+
+/**
+ * @desc This function creates the heatmap 
+ * @param {array} points - the coordinates, the heatmap is based on
+ * @param {float} intensity - the heatmap intensity of the coordinates
+ */
+function createHeatmap(points, intensity){
+  // initialize output array
+  var heatArr = [];
+  // create array that L.heatLayer can process
+  for (i=0; i<points.length; i++){
+     var coords_lon = points[i][2][0];
+     var coords_lat = points[i][2][1];
+    heatArr.push([coords_lat, coords_lon, intensity]);
+  }
+  // create heatmap
+  var heat = L.heatLayer(heatArr, {radius: 25, minOpacity: 0.2 });
+  // create other basemap
+  var basemap = L.tileLayer.wms('http://ows.mundialis.de/services/service?', {layers: 'OSM-WMS'});
+  // Layers for Layercontrol
+  var overlayBase = {"basemap": basemap};
+  var overlayHeat = {"Heatmap": heat};
+  // Layercontrol element with heatmap and basemap
+  L.control.layers(overlayBase, overlayHeat).addTo(map2);
+  
+}
 
 
 /**
@@ -107,6 +133,8 @@ for (i=0; i< json.features.length; i++ ){
  //push the array into the output array
  narr.push(inarr);
 }
+
+createHeatmap(narr, 0.5);
 
 // for every busstop do the following:
 for (i=0; i<narr.length; i++){
@@ -314,20 +342,7 @@ map2.addEventListener('click', function(ev) {
          });
 
 
-/**
-* @desc This function takes updated Markerlocations from textarea and replaces them in MongoDB
-* @param {Leaflet marker} marker - marker that has to be updated
-*/
-function updateToMongo(marker){
-// attach to MongoDB and update locations
-$.ajax({  url: "/item",       
-        type: "PUT",
-        data: {_id: marker.options.id, geoJSON: marker.toGeoJSON()},
-        success: function(){
-                 console.log("Feature aktualisiert");
-        }
-      })
-}  
+ 
 
 
 

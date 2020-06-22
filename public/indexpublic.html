@@ -6,40 +6,108 @@
 
   <link rel="stylesheet" type="text/css" href="public/style.css">
   <link rel="stylesheet" type="text/css" href="/leaflet/leaflet.css">
+  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+
    
   <title>Busstops Muenster</title>
   
 </head>
 <body >
-  <div>
-    <button onclick="getLocation()" style= "float:left">Aktuellen Standort ermitteln und Bushaltestellen anzeigen </button>
-    <button onclick="displayFromMongoMap2(map2, false)" style ="float:left">Standorte aus MongoDB/Leaflet-Draw übernehmen </button>
-  
-    <p>  </p>
 
-    <a target="_blank" rel="noopener noreferrer" href = "localhost:3000/page1" style= "float:right"> Standorte editieren</a> 
-  </div>
+  <nav class ="navbar navbar-expand-lg navbar-light bg-light">
+    <a class = "navbar-brand" href="#"> Bushaltestellenanzeige Münster</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" target="_blank" rel="noopener noreferrer" href="localhost:3000/page1">Standorte editieren <span class="sr-only">(current)</span></a>
+        </li>
+    </div>
+  </nav>
 
   <p>&nbsp;</p>
 
-  <div id="map2"></div>
+
+
+  <div class = "row">
+    <div class = "col-sm-6">.
+      <button onclick="getLocation()" type = "button" class = "btn btn-block" style = "color:darkslategray">Aktuellen Standort ermitteln und Bushaltestellen anzeigen </button>
+    </div>
+    <div class = "col-sm-6">.
+    <button onclick="displayFromMongoMap2(map2, false)" type = "button" class = "btn btn-block" style = "color:darkslategray"  >Standorte aus MongoDB/Leaflet-Draw übernehmen </button>
+    </div>
+  </div>
+    <p>  </p>
+
+
+
+  <p>&nbsp;</p>
+
+<div class = "row">
+  <div class = "col-md-6">
+    <div id="map2"></div>
+  </div>
   
-  <table id="myTable">
-    <tbody>
-    <tr>
-    <td>Haltestelle</td>
-    <td>Distanz</td>
-    <td>Himmelsrichtung</td>
-    <td>Nächste Linien</td>
-    </tr>
-  </table>
-    
+  <div class = "col-md-6 table-responsive">
+
+    <table id="myTable" class= "table-responsive">
+      <tbody>
+        <tr>
+          <td>Haltestelle</td>
+          <td>Distanz</td>
+          <td>Himmelsrichtung</td>
+          <td>Nächste Linien</td>
+        </tr>
+      
+    </table>
+
+  </div>
+
+  </div> 
+
+
+  <footer class="page-footer font-small teal pt-4">
+
+    <!-- Footer Text -->
+    <div class="container-fluid text-center ">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-12 mt-md-0 mt-1">
+  
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Impressum</h5>
+          <p>Judith Becka, Geosoftware 1, Aufgabe 6, j_beck60@uni-muenster.de</p>
+          
+  
+        </div>
+        
+  
+    </div>
+    <!-- Footer Text -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
 
 </body>
 </html>
 
   <script src="/leaflet/leaflet.js"></script>
   <script src="/jquery/jquery.js"></script>
+  <script src="/bootstrap/js/bootstrap.js"></script>
+  <script src="/leaflet-heat/leaflet-heat.js"></script>
 
   <script src="public/tokens.js"></script>
   <script src="public/script.js"></script>
+ 

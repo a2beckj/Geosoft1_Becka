@@ -1,7 +1,7 @@
 // jshint esversion: 6
 
 /**
-* Lösung zu Aufgabe 5, Geosoft 1, SoSe 2020
+* Lösung zu Aufgabe 6, Geosoft 1, SoSe 2020
 * @author Judith Becka   Matr.Nr.: 426693
 */
 
@@ -265,8 +265,10 @@ function displayFromMongoMap(mapid, dragging){
                           // add marker to map
                           mapid.addLayer(marker);
                           marker.bindPopup(id1);
-                           
+
+
                           // create marker event thar marker can be dragged
+
                           marker.on('drag', function(ev){
                             document.getElementById("geojsontextarea").value = JSON.stringify(marker.toGeoJSON());
                             
@@ -316,4 +318,6 @@ function updateToMongo(marker){
                    console.log("Feature aktualisiert");
           }
         })
+
   } 
+

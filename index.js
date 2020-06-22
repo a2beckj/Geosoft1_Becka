@@ -62,6 +62,10 @@ app.use("/leaflet", express.static(__dirname + "/node_modules/leaflet/dist"));
 
 app.use("/leaflet-draw", express.static(__dirname + "/node_modules/leaflet-draw/dist"));
 
+app.use("/bootstrap", express.static(__dirname + "/node_modules/bootstrap/dist"));
+
+app.use("/leaflet-heat", express.static(__dirname + "/node_modules/leaflet.heat/dist"));
+
 
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
 
